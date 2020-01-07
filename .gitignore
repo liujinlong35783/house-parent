@@ -1,0 +1,4 @@
+# Project exclude paths
+/house-dao/target/
+/house-service/target/
+/house-web/target/

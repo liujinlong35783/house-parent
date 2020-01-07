@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="house-web:war">
+    <output-path>$PROJECT_DIR$/house-web/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>house-web</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="house-web-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="house-web:war exploded" />
+    </root>
+  </artifact>
+</component>

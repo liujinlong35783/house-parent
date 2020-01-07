@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Insert title here</title>
+    <link rel="stylesheet" type="text/css" href="easyUI/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="easyUI/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="easyUI/css/demo.css">
+    <script src="js/jquery-1.8.3.js"></script>
+    <!--jquery.easyui.min.js包含了easyUI中的所有插件-->
+    <script src="js/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="js/street.js"></script>
+</head>
+<body>
+<table id="data" title="信息" class="easyui-datagrid"
+       url="studentData.json" toolbar="#ToolBar" pagination="true"
+       fitColumns="true" fit="true" rownumbers="true" >
+</table>
+
+<div id="ToolBar">
+    <div style="height: 40px;">
+        <a href="javascript:Add()" class="easyui-linkbutton"
+           iconCls="icon-add" plain="true">添加</a> <a
+            href="javascript:ModifyBySelect()" class="easyui-linkbutton"
+            iconCls="icon-edit" plain="true">修改</a> <a
+            href="javascript:DeleteByFruitName()" class="easyui-linkbutton"
+            iconCls="icon-remove" plain="true">删除</a>
+    </div>
+</div>
+<!--添加对话框-->
+<!--弹出对话框buttons="#AddDialogButtons":可以引入按钮-->
+<div id="AddDialog" class="easyui-dialog" buttons="#AddDialogButtons"
+     style="width: 280px; height: 250px; padding: 10px 20px;" closed="true">
+    <form id="ModiyDialogForm" method="post">
+        <table>
+            <tr>
+                <td>区域:</td>
+                <td><input type="text" class="easyui-validatebox" required
+                           name="name"  /></td>
+            </tr>
+        </table>
+    </form>
+</div>
+<!--修改对话框-->
+<div id="upDialog" class="easyui-dialog" buttons="#upDialogButtons"
+     style="width: 280px; height: 250px; padding: 10px 20px;" closed="true">
+    <form id="updataDialogForm" method="post">
+        <input type="hidden" name="id">
+
+        <table>
+            <!--<tr>-->
+                <!--<td>编号:</td>-->
+                <!--<td><input type="text" name="id" readonly></td>-->
+            <!--</tr>-->
+            <tr>
+                <td>街道:</td>
+                <td><input type="text" class="easyui-validatebox" required
+                           name="name"  /></td>
+            </tr>
+        </table>
+    </form>
+</div>
+<!--弹出对话框时引入的按钮-->
+<div id="AddDialogButtons">
+    <a href="javascript:SaveAddDialog()" class="easyui-linkbutton"
+       iconCls="icon-ok">保存</a> <a href="javascript:CloseDialog('AddDialog')"
+                                   class="easyui-linkbutton" iconCls="icon-cancel">取消</a>
+</div>
+<div id="upDialogButtons">
+    <a href="javascript:SaveUpDialog()" class="easyui-linkbutton"
+       iconCls="icon-ok">更新</a> <a href="javascript:CloseDialog('upDialog')"
+                                   class="easyui-linkbutton" iconCls="icon-cancel">取消</a>
+</div>
+<!--引入Js-->
+    <!--<script type="text/javascript" src="./js/MyEasyUICRUD.js"></script>-->
+<!--引入Js-->
+</body>
+</html>
